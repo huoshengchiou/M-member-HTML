@@ -31,14 +31,93 @@
             width: 20rem;
             height: 10rem;
             /* background: teal; */
-            position: relative;
-            /* display: flex; */
+            border: 1px solid #ADB6BD;
+            padding: 0.6rem;
+            /* position: relative; */
+            display: flex;
+        }
+
+        .M-friendcollectCardleft {
+            width: 7.5rem;
+            height: 9rem;
+            /* border: 1px solid black; */
+
+        }
+
+        .M-friendcollectPhoto {
+            width: 6rem;
+            height: 6rem;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+
+        .M-friendcollectClear {
+            margin-top: 0.8rem;
+            border: 1px solid #F9A451;
+            color: #F9A451;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .M-friendcollectCardright {
+            width: 11rem;
+            height: 9rem;
+            /* border: 1px solid black; */
+        }
+
+        .M-friendcollectCardright h5 {
+            font-size: 1.875rem;
+            margin-top: 0.4rem;
+            line-height: 4rem;
+        }
+
+        .M-friendcollectCardright p {
+            font-size: 1rem;
+            color: #ADB6BD;
+            overflow: hidden;
+            /* 指定保留行數*/
+            line-height: 1.2rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .M-friendcollectDot {
+            width: 1rem;
+            height: 1rem;
+            background: green;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 7.5rem;
+        }
+
+        .M-friendcollectCardright span {
+            margin-left: 0.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 900;
         }
     </style>
 </head>
 
 <body>
-    <div class="M-friendcollectWrapper"></div>
+    <div class="M-friendcollectWrapper">
+        <!-- 朋友列表小卡 始-->
+        <div class="M-friendcollectCard">
+            <!-- 小卡左側 -->
+            <div class="M-friendcollectCardleft">
+                <div class="M-friendcollectPhoto"></div>
+                <a type="button" class="M-friendcollectClear" href="#">解除好友</a>
+            </div>
+            <!-- 小卡右側 -->
+            <div class="M-friendcollectCardright">
+                <h5>KOTAKE</h5>
+                <p>Hello45454646456464646464464</p>
+                <div class="M-friendcollectDot"></div><span>on</span>
+            </div>
+        </div>
+        <!-- 朋友列表小卡 終-->
+    </div>
 
 
 
