@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Microsoft JhengHei;
+        }
+
+        .M-dollcardWrapper {
+            width: 23.2rem;
+            height: 41.5rem;
+            border: 1px solid black;
+        }
+
+        .M-dollcardMajor {
+            width: 14.375rem;
+            height: 14.375rem;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .M-dollhControlgroup {
+            width: 22rem;
+            height: 3rem;
+            border: 1px solid blue;
+            margin: 0 auto;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .M-dollhControlgroup h5 {
+            line-height: 3rem;
+            font-weight: 900;
+        }
+
+        .M-dollhSelect {
+            width: 3rem;
+            height: 3rem;
+            background: greenyellow;
+        }
+
+        .M-dollhimgOuter {
+            margin-top: 1rem;
+            width: 23.1rem;
+            height: 8rem;
+            border: 1px solid violet;
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .M-dollhimgList {
+            list-style: none;
+            width: 50rem;
+            height: 8rem;
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: -100px;
+            /* -webkit-flex-wrap: nowrap; */
+
+        }
+
+        .M-dollhimgList li {
+            display: inline-block;
+            width: 8rem;
+            height: 7.5rem;
+            margin: 0 5px;
+            background: yellow;
+            /* position: absolute; */
+
+        }
+
+        /* .M-dollhimgList ul li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="M-dollcardWrapper">
+        <!-- 主要頭像 canvas-->
+        <div class="M-dollcardMajor">
+            <canvas width="230" height="230"></canvas>
+        </div>
+        <div class="M-dollhControlgroup">
+            <div class="M-dollhSelect" id="left"></div>
+            <h5>頭部選擇</h5>
+            <div class="M-dollhSelect"></div>
+        </div>
+        <div class="M-dollhimgOuter">
+            <ul class="M-dollhimgList">
+                <li><img src="" alt="">1</li>
+                <li><img src="" alt="">2</li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#left').on('click', () => {
+
+        })
+    </script>
+</body>
+
+</html>
