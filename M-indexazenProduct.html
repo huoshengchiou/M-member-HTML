@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Microsoft JhengHei;
+        }
+
+        .M-markpdWrapper {
+            margin: 50px;
+            width: 300px;
+            height: 370px;
+            /* border-radius: 0 5%; */
+            /* border: 1px solid black; */
+            overflow: hidden;
+            box-shadow: 0px 6px 2 black;
+            
+            transition: .75s;
+            box-shadow: 0px 3px 6px #707070;
+            text-align: center;
+        }
+        .M-markpdWrapper.active{
+            transform: translateY(-10px);
+        }
+
+        .M-markpdImg {
+            width: 100%;
+            height: 166px;
+        }
+
+        .M-markpdImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: cell;
+            transition: .75s;
+        }
+
+        .M-markpdImg img:hover {
+            transform: scale(0.95);
+        }
+
+        .M-markpdBody {
+            width: 90%;
+            height: 0;
+            text-align: center;
+            margin: 0 auto 10px;
+            /* transition: .75s; */
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.58, 1);
+            overflow: hidden;
+
+
+        }
+
+        .M-markpdBody.active {
+            height: 51%;
+            border: 2px solid #707070;
+            border-top: 0;
+
+        }
+
+        .M-markpdBody h5 {
+            font-weight: 600;
+            line-height: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .M-markpdDes {
+            position: relative;
+            text-align: right;
+        }
+
+        .M-markpdDes p {
+            margin: 5px 5px;
+            font-size: 0.8rem;
+            line-height: 25px;
+            text-align: left;
+            /* 指定保留行數*/
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+        }
+
+        .M-markpdTrans {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            color: #707070;
+            text-decoration: none;
+            float: right;
+            padding: 10px;
+            filter: opacity(50%)
+                /* position: absolute;
+            right: 0; */
+        }
+
+        .M-markpdTrans:hover {
+            /* filter: drop-shadow(3px -6px 2px black) */
+            filter: opacity(100%)
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .M-markpdTrans img {
+            width: 100%;
+            height: 100%;
+            color: #707070;
+            object-fit: cover;
+        }
+
+        .M-markpdOuttitle {
+            display: inline-block;
+            margin: 0;
+            transition: .75s;
+            line-height: 150px;
+            /* white-space: normal; */
+        }
+
+        .M-markpdOuttitle.active {
+            opacity: 0;
+        }
+
+        /* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+        .svg-icon {
+            width: 1em;
+            height: 1em;
+        }
+
+        .svg-icon path,
+        .svg-icon polygon,
+        .svg-icon rect {
+            fill: #4691f6;
+        }
+
+        .svg-icon circle {
+            stroke: #4691f6;
+            stroke-width: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="M-markpdWrapper">
+        <div class="M-markpdImg">
+            <img src="./images/markpdimg.jpg" alt="">
+        </div>
+        <div class="M-markpdBody">
+            <h5>隻狼：暗影雙死</h5>
+            <span class="M-markpdSub"> <svg class="svg-icon" viewBox="0 0 20 20">
+                
+                    <path
+                        d="M9.719,17.073l-6.562-6.51c-0.27-0.268-0.504-0.567-0.696-0.888C1.385,7.89,1.67,5.613,3.155,4.14c0.864-0.856,2.012-1.329,3.233-1.329c1.924,0,3.115,1.12,3.612,1.752c0.499-0.634,1.689-1.752,3.612-1.752c1.221,0,2.369,0.472,3.233,1.329c1.484,1.473,1.771,3.75,0.693,5.537c-0.19,0.32-0.425,0.618-0.695,0.887l-6.562,6.51C10.125,17.229,9.875,17.229,9.719,17.073 M6.388,3.61C5.379,3.61,4.431,4,3.717,4.707C2.495,5.92,2.259,7.794,3.145,9.265c0.158,0.265,0.351,0.51,0.574,0.731L10,16.228l6.281-6.232c0.224-0.221,0.416-0.466,0.573-0.729c0.887-1.472,0.651-3.346-0.571-4.56C15.57,4,14.621,3.61,13.612,3.61c-1.43,0-2.639,0.786-3.268,1.863c-0.154,0.264-0.536,0.264-0.69,0C9.029,4.397,7.82,3.61,6.388,3.61">
+                    </path>
+                </svg></span><span> 1345</span> | 售價 : <span>NT 1450</span>
+            <div class="M-markpdDes">
+                <p>《隻狼：暗影雙死》是曾製作《黑暗靈魂》、《血源詛咒》的
+                    FromSoftware團隊全新打造的原創動作遊戲，以日本戰國時代的虛構國家「葦名」為舞台，描述人稱「隻腕之狼」的獨臂忍者，憑藉著過人的武藝與犀利的義手，孤身一人踏上拯救主公、對抗魑魅魍魎之輩的不歸旅程。
+                </p>
+            </div>
+            <a class="M-markpdTrans clearfix" href="#"><img src="./images/more.svg" alt=""></a>
+        </div>
+        <!-- 還要處理遊戲名稱太長問題 -->
+        <h5 class="M-markpdOuttitle">Sekiro: Shadows Die </h5>
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        // 喜愛遊戲小卡
+        $('.M-markpdImg').click(function () {
+            let path = $(this).closest('.M-markpdWrapper');
+            path.find('.M-markpdBody').toggleClass('active');
+            path.find('.M-markpdOuttitle').toggleClass('active');
+        })
+        $('.M-markpdWrapper').hover(function(){
+            $(this).toggleClass('active');
+        })
+
+
+    </script>
+</body>
+
+</html>

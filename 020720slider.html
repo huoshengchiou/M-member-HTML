@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+    <style>
+        /* 容器設定為position relative */
+        .wrapper {
+            max-width: 800px;
+            height: 400px;
+            background: black;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* li要跟容器高度一樣中心點才會校正 */
+        /* 根據li調整absolute移動背後的串連大圖 */
+        .slider-img {
+            /* 大圖總長度設定 */
+            /* width: 3200px; */
+            left: 0px;
+            transition: .75s;
+        }
+
+        .slider-img li {
+            width: 100%;
+            height: 400px;
+            /* 去平均分掉ul的寬度 */
+            flex-grow: 1;
+        }
+
+        .slider-img li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* position: absolute; */
+
+        }
+
+        /* .dots{
+            width:50px;
+            height:20px;
+            background: blueviolet;
+            position:absolute;
+            bottom: 50px;
+        } */
+        .slider-dots {
+            bottom: 0;
+            /* 要有寬度才能置中 */
+            width: 100%;
+        }
+
+        .slider-dots li {
+            width: 20px;
+            height: 20px;
+            border: 4px solid white;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        /* .slider-dots li:hover {
+            background: teal;
+        } */
+        /* a{
+            width: 100px;
+            height: 100px;
+            background: brown;
+            position: absolute;
+        } */
+        .leftArrow i {
+            width: 50px;
+            height: 50px;
+        }
+
+        .arr {
+            height: 100%;
+            width: 56px;
+            cursor: pointer;
+        }
+
+        .fas {
+            font-size: 30px;
+            color: cornsilk;
+        }
+
+        .leftArrow {
+            left: 0;
+        }
+
+        .rightArrow {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- mx-auto居中 -->
+    <div class="wrapper mx-auto">
+        <ul class="list-unstyled d-flex slider-img position-absolute" id="sliderImg">
+            <!-- <li><img src="./images/img2.jpg" alt=""></li>
+            <li><img src="./images/img3.jpg" alt=""></li>
+            <li><img src="./images/img4.jpg" alt=""></li>
+            <li><img src="./images/img5.jpg" alt=""></li> -->
+        </ul>
+        <ul class="list-unstyled d-flex slider-dots position-absolute justify-content-center" id="sliderdots">
+            <!-- <div class="dots"></div> 
+            -->
+            <!-- <li></li>
+            <li></li>
+            <li></li>
+            <li></li> -->
+        </ul>
+        <a class="arr leftArrow position-absolute d-flex justify-content-center align-items-center" role="button"
+            id="pre"><i class="fas fa-arrow-circle-left"></i>
+        </a>
+        <a class="arr rightArrow position-absolute d-flex justify-content-center align-items-center" role="button"
+            id="next"><i class="fas fa-arrow-circle-right"></i>
+        </a>
+    </div>
+
+    <!-- <a href="https://www.google.com.tw/">
+        <img src="./images/img8.jpg" alt="">
+    </a> -->
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+        let sliderPic = ['img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg'];
+        let slideWidth = $('.wrapper').width();
+
+// 依據陣列調整li寬度(之後只要增加陣列內的圖片名稱可以無限擴)
+        $('#sliderImg').width(sliderPic.length*slideWidth);
+
+        for (let i =0; i<sliderPic.length; i++){
+            $('#sliderImg').append(
+                `<li><img src="./images/${sliderPic[i]}" alt=""></li>`
+            )
+            $('#sliderdots').append(
+                `<li></li>`
+            )
+        }
+        
+
+        // 調整放圖片li長度
+        console.log($('#sliderImg').width())
+        // $('#sliderImg').width(800*$('.wrapper').width())
+
+
+
+
+         let slideImgs = sliderPic.length;
+
+
+
+
+        // 預設第一個點填色
+        $('#sliderdots li').eq(0).css('background', 'teal');
+
+        let index = 0;
+
+
+        $('#sliderdots li').hover(function () {
+            index = $(this).index();
+            slide();
+
+        })
+        
+   
+
+        $('#pre').click(function () {
+           
+            index--;    
+            (index < 0) ?  index = slideImgs - 1 : index;      
+            slide();
+          
+
+        })
+
+        $('#next').click(function () {     
+            index++;
+            (index> (slideImgs - 1)) ? index = 0 : index;      
+            slide();
+
+        })
+        
+        function slide() {
+            $('#sliderImg').css('left', 0 - index * slideWidth);
+            $('#sliderdots li').eq(index).css('background', 'teal')
+                .siblings().css('background', 'transparent');
+        }
+
+
+    </script>
+
+</body>
+
+</html>
